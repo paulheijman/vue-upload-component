@@ -348,7 +348,8 @@ export default class ChunkUploadHandler {
       url: this.action,
       body: Object.assign(this.finishBody, {
         phase: 'finish',
-        session_id: this.sessionId
+        session_id: this.sessionId,
+        lastModified: Math.round(this.file.file.lastModified / 1000)
       })
     }).then(res => {
       this.file.response = res

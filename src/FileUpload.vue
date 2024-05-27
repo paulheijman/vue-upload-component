@@ -1044,6 +1044,7 @@ export default defineComponent({
           form.append(key, value)
         }
       }
+      form.append('lastModified', Math.round(file.file.lastModified / 1000))
 
       // Moved file.name as the first option to set the filename of the uploaded file, since file.name
       // contains the full (relative) path of the file not just the filename as in file.file.filename
